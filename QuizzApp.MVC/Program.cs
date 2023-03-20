@@ -1,17 +1,10 @@
 using Microsoft.EntityFrameworkCore;
-using QuizzApp.MVC.Data;
 using System;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-{
-    //the change occurs here.
-    //builder.cofiguration and not just configuration
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
-});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

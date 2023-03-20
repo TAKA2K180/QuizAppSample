@@ -5,15 +5,15 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using QuizzApp.MVC.Data;
+using QuizzApp.API.Data;
 
 #nullable disable
 
-namespace QuizzApp.MVC.Migrations
+namespace QuizzApp.API.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230317060828_initial")]
-    partial class initial
+    [Migration("20230320025150_addDate")]
+    partial class addDate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -45,7 +45,39 @@ namespace QuizzApp.MVC.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Questions");
+                    b.ToTable("QuestionsDb");
+                });
+
+            modelBuilder.Entity("QuizzApp.Core.Models.UserDetails", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateQuizTaken")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("EmpId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Score")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("UserDetailsDb");
                 });
 #pragma warning restore 612, 618
         }
