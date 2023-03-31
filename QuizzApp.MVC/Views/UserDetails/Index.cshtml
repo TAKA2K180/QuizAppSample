@@ -1,0 +1,25 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model QuizzApp.MVC.ViewModel.UserViewModel
+
+@using (Html.BeginForm("User fillup", "Home", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(u => u.FirstName)
+        @Html.TextAreaFor(u => u.FirstName, new {@class = "form-control"})
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(u => u.LastName)s
+        @Html.TextAreaFor(u => u.LastName, new {@class = "form-control"})
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(u => u.EmpId)
+        @Html.TextAreaFor(u => u.EmpId, new {@class = "form-control"})
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+};

@@ -23,7 +23,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\QuizzApp.Core\QuizzApp.Core.csproj" />
-    <ProjectReference Include="..\QuizzApp.MVC\QuizzApp.MVC.csproj" />
   </ItemGroup>
 
 </Project>

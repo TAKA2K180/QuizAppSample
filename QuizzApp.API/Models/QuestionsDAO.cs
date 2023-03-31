@@ -34,7 +34,6 @@ namespace QuizzApp.API.Models
             _context.QuestionsDb.Attach(question);
             _context.QuestionsDb.Remove(question);
             _context.SaveChanges();
-
         }
 
         public List<Questions> GetAllQuestions()

@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\QuizzApp.API\QuizzApp.API.csproj" />
     <ProjectReference Include="..\QuizzApp.Core\QuizzApp.Core.csproj" />
   </ItemGroup>
 
