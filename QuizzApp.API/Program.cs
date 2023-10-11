@@ -14,6 +14,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddMvc();
 builder.Services.AddScoped<QuestionsDAO, QuestionsDAO>();
 builder.Services.AddScoped<UserDAO, UserDAO>();
+builder.Services.AddScoped<InstructorDAO, InstructorDAO>();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     //the change occurs here.

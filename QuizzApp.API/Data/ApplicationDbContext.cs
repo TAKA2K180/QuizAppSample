@@ -11,5 +11,6 @@ namespace QuizzApp.API.Data
         }
         public DbSet<Questions> QuestionsDb { get;  set; }
         public DbSet<UserDetails> UserDetailsDb { get; set; }
+        public DbSet<InstructorDetails> InstructorDetailsDb { get; set; }
     }
 }

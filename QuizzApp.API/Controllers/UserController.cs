@@ -32,9 +32,9 @@ namespace QuizzApp.API.Controllers
 
         // POST api/<UserController>
         [HttpPost]
-        public void Post([FromBody] string FirstName, string LastName, string EmpId, int Score, DateTime Created, DateTime Taken)
+        public void Post(string FirstName, string LastName, string EmpId, int Score, DateTime Taken)
         {
-            _userDAO.AddUser(new Guid(), FirstName, LastName, EmpId, Score, Created, Taken);
+            _userDAO.AddUser(new Guid(), FirstName, LastName, EmpId, Score, DateTime.Now, Taken);
         }
 
         // PUT api/<UserController>/5
